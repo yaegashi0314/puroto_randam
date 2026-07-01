@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム席替えアプリ</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🎲 ランダム席替えアプリ</h1>
+
+    <!-- ================= 名簿登録 ================= -->
+    <section class="box">
+
+        <h2>参加者登録</h2>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="名前を入力">
+
+            <button id="addBtn">
+                追加
+            </button>
+
+            <button id="testBtn">
+                テストデータ
+            </button>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>参加</th>
+                    <th>名前</th>
+                    <th>削除</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="studentList">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- ================= 禁止ペア ================= -->
+
+    <section class="box">
+
+        <h2>禁止ペア設定</h2>
+
+        <div class="pair-area">
+
+            <select id="student1"></select>
+
+            <span>×</span>
+
+            <select id="student2"></select>
+
+            <button id="addForbiddenBtn">
+
+                追加
+
+            </button>
+
+        </div>
+
+        <ul id="forbiddenList">
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- ================= 席替え設定 ================= -->
+
+    <section class="box">
+
+        <h2>席替え設定</h2>
+
+        <div class="setting">
+
+            <label>
+
+                横
+
+                <input
+                    type="number"
+                    id="cols"
+                    value="4"
+                    min="1">
+
+            </label>
+
+            <label>
+
+                縦
+
+                <input
+                    type="number"
+                    id="rows"
+                    value="3"
+                    min="1">
+
+            </label>
+
+        </div>
+
+        <br>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="tripleSeat"
+                checked>
+
+            奇数なら3人席を作る
+
+        </label>
+
+        <br><br>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="avoidLastPair">
+
+            前回と同じペアを避ける
+
+        </label>
+
+    </section>
+
+
+
+    <!-- ================= 席替え ================= -->
+
+    <section class="box">
+
+        <button id="randomBtn">
+
+            🎲 ランダム席替え
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= 教室 ================= -->
+
+    <section class="box">
+
+    <h2>席配置</h2>
+
+    <div id="seatArea">
+
+    </div>
+
+</section>
+
+
+    <!-- JavaScript -->
+
+    <script src="students.js"></script>
+    <script src="forbidden.js"></script>
+    <script src="seating.js"></script>
+
+</body>
+
+</html>
